@@ -11,4 +11,11 @@ router.get("/", (req, res) => {
   });
 });
 
+router.get("/ping", (req, res) => {
+  res.status(200).json({
+    success: true,
+    data: "Server is Alive.",
+  });
+});
+
 module.exports = router;
