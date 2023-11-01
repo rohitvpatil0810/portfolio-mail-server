@@ -1,7 +1,7 @@
 const cron = require("node-cron");
 const axios = require("axios");
 
-const serverURL = "http://localhost:5000/ping"; // Replace with the actual URL
+const serverURL = process.env.API_BASE_URL + "/ping";
 
 // Schedule a cron job to make a request every 5 minutes
 cron.schedule("*/5 * * * *", async () => {
