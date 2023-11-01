@@ -2,6 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 dotenv.config({ path: "./config.env" });
 const router = require("./routers");
+const { apiKeyMiddleware } = require("./middlewares/apiKeyMiddleware");
 
 const app = express();
 app.use(express.json());
@@ -12,4 +13,4 @@ app.listen(port, () => {
   console.log("Server listening on port ", port);
 });
 
-app.use(router);
+app.use(apiKeyMiddleware, router);
