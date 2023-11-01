@@ -1,5 +1,6 @@
 const express = require("express");
 const dotenv = require("dotenv");
+const cors = require("cors");
 dotenv.config({ path: "./config.env" });
 const router = require("./routers");
 const { spawn } = require("child_process");
@@ -7,6 +8,7 @@ const { apiKeyMiddleware } = require("./middlewares/apiKeyMiddleware");
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 const port = process.env.PORT || 5000;
 
