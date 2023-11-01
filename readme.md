@@ -46,7 +46,7 @@ git clone https://github.com/rohitvpatil0810/portfolio-mail-server.git
 
 ## Usage
 
-To send an email, make a POST request to the `/email/emailsend-notification` endpoint with the required data and the API key in the headers.
+To send an email, make a POST request to the `/email/send-notification` endpoint with the required data and the API key in the headers.
 
 Example using cURL:
 
