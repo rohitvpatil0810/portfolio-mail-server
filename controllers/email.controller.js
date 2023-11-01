@@ -8,13 +8,13 @@ module.exports.sendNotifications = async (req, res) => {
   try {
     // Error Handling
     if (!name || !email || !message) {
-      res.status(400).json({
+      return res.status(400).json({
         success: false,
         error: "Please enter all details.",
       });
     }
     if (!validator.isEmail(email)) {
-      res.status(400).json({
+      return res.status(400).json({
         success: false,
         error: "Please enter valid email.",
       });
